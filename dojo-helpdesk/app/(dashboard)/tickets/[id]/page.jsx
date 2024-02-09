@@ -4,6 +4,17 @@ import { notFound } from "next/navigation";
 // false: Dynamic segments not included in generateStaticParams will return a 404
 export const dynamicParams = true;
 
+
+// by using generateMetadata, we can dynamically generate metadata for each page
+export async function generateMetadata({ params }){
+  const res = await fetch(`http://localhost:4000/tickets/${params.id}`);
+  const ticket = await res.json();
+
+  return {
+    title: `Dojo Helpdesk | ${ticket.title}`
+  }
+}
+
 // by using generateStaticParams, we can statically generate routes at build time
 // instead of on-demand at runtime, this can greatly improve performance and SEO
 export async function generateStaticParams() {
