@@ -22,18 +22,11 @@
       "user_email": "peach@netninja.dev"
     },
     {
-      "id": "7eee",
-      "title": "qwqw",
-      "body": "qwqw",
-      "priority": "low",
-      "user_email": "mario@netninja.dev"
-    },
-    {
-      "id": "369d",
-      "title": "Important Ticket!",
-      "body": "blah blah blah, blah",
-      "priority": "high",
-      "user_email": "mario@netninja.dev"
+      "id": "9b7e",
+      "title": "testing",
+      "body": "this is a test...",
+      "user_email": "hello@email.com",
+      "priority": "high"
     }
   ]
 }
