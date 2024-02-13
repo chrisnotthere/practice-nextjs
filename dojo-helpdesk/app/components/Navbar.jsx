@@ -3,7 +3,9 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./dojo-logo.png";
 
-export default function NavBar() {
+export default function NavBar({ user }) {
+  // console.log(user)
+  
   return (
     <nav>
       <Image 
@@ -16,6 +18,7 @@ export default function NavBar() {
       <h1>Dojo Helpdesk</h1>
       <Link href={"/"}>Dashboard</Link>
       <Link href={"/tickets"}>Tickets</Link>
+      {user && <span>Hello, {user.email}</span>}
     </nav>
   );
 }
