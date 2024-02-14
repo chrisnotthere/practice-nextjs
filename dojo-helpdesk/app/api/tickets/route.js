@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import { cookies } from 'next/headers'
 
 export async function POST(req) {
-  console.log('this is a test...')
   const ticket = await req.json();
 
   // get supabase instance

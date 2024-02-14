@@ -1,6 +1,13 @@
 import './globals.css'
 import { Rubik } from 'next/font/google'
 
+/** 
+ * Force dynamic rendering, which will result in routes being rendered for each user at request time.
+ * Dynamic rendering is useful when a route has data that is personalized to the user or has information 
+ * that can only be known at request time, such as cookies or the URL's search params. 
+**/
+export const dynamic = 'force-dynamic'; 
+
 const rubik = Rubik({ subsets: ['latin'] })
 
 export const metadata = {
