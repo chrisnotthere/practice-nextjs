@@ -19,6 +19,26 @@ export async function addTicket(formData){
     user_email: session.user.email
   })
 
+  if (error) {
+    throw new Error('Could not add ticket.')
+  }
+
   revalidatePath('/tickets')
-  redirect('/tickets')
+  redirect('/tickets') // no error
 }
+
+export async function deleteTicket(id){
+  const supabase = createServerActionClient({ cookies })
+
+  const { error } = await supabase.from('tickets')
+  .delete()
+  .eq('id', id)
+
+  if (error) {
+    throw new Error('Could not delete ticket.')
+  }
+
+  revalidatePath('/tickets')
+  redirect('/tickets') // error
+}
+
